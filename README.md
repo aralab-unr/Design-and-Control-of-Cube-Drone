@@ -62,21 +62,17 @@ Then rebuild the project and run the simulation as in the normal cases described
 We used the following sensors to control the Cube-Drone:
 - Teensy 4.1 
 - MPU 6050
-- Micoair MTF-02P optical flow and LiDAR sensor (MTF-02P), TF Mini 1.8.1 for inspection
+- Micoair MTF-02P optical flow and LiDAR sensor (MTF-02P)
 - FrSky X8R radio receiver
 
-We used the following hardware to collect the data for 3D mapping and steel inspection:
+We used the following hardware to collect the data for 3D mapping:
 - NVIDIA Jetson Orin
 - Velodyne VLP-16 Puck LiDAR Sensor
 - ZED Mini Stereo Camera for image capture
-- DC HOUSE Mini Electric Linear Actuator Stroke
-- Ultrasonic Thickness Gauge
-  
-## Embedded library
-To embed the controller onto the Teensy 4.1, the user must download the ArduinoSMNMPC folder. This folder contains the library for NMPC (Nonlinear Model Predictive Control) and the implemented code for the flying robot. The user must copy the code generation library into the libraries folder of the Arduino IDE and then upload the sketch nmpcpidteensy.ino to the Teensy 4.1. As discussed earlier, if the user wants to run their own NMPC controller for another system, they must generate the code according to the specific problem and then replace all the generated files in the library to update the embedded code. (Note that qpOASES is already included in the library.)
 
-* Note: The embedded code may have some missing includes in the acado_qpoases_interface.cpp file. To fix this, change #include "INCLUDE/EXTRAS/SolutionAnalysis.hpp" to #include "SolutionAnalysis.hpp" and change #include "INCLUDE/QProblemB.hpp" to #include "QProblemB.hpp".
-  
+## Embedded library
+To embed the controller onto the Teensy 4.1, Please navigate to our controller in [SM-NMPC](https://github.com/aralab-unr/SM-NMPC) for more details.
+
 ## Results
 ### Stability test
 To evaluate the stability of the Cube-Drone, we conducted tests on motor failure scenarios as well as its ability to fly through a narrow culvert. The hardware setup for the motor failure case is shown below:
