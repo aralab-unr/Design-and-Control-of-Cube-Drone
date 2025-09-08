@@ -49,8 +49,7 @@ $ ros2 run nmpcsmccube lidartrajectorywall
 
 # Step 3: Run the controller
 $ ros2 run nmpcsmccube nmpcsmccube
-
-```shell
+```
 
 ## Motor failure results
 
