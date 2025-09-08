@@ -125,4 +125,13 @@ To use the SLAM algorithm, follow the command:
 ```shell
 $ ros2 launch lio_imm liom.launch.py \pointcloud_topic:=<\cloud topic> \imu_topic:=<\imu topic> \img_topic:=<\img topic>
 ```
-
+<p align="center">
+  <img src="figures/stair.png" alt="stair" width="400">
+</p>
+The Cube-Drone flew through a narrow culvert:
+<p align="center">
+  <img src="figures/campus.png" alt="campus" width="900">
+</p>
+<p align="center">
+  <img src="figures/parking.png" alt="parking" width="400">
+</p>
