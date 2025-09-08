@@ -24,14 +24,14 @@ $ echo "source ~/ros2_ws/devel/setup.bash" >> ~/.bashrc
 
 # Step 2: Clone this repo into your workspace
 $ cd ~/ros2_ws/src
-Download the folder smcmpcquad or the smcnmpccube in the main branch
+Download the folder nmpcsmccube in the main branch
 
 # Step 3: Build the colcon workspace for this package
 $ cd ~/ros2_ws
 $ colcon build
 ```
 * Note that the package contains the code generation and includes the qpOASES library. If the user wants to use SM-NMPC for a different problem, they need to regenerate the code and replace it to the include folder.
-* Note that this project uses a custom plugin. Users need to replace the plugin path in the file /urdf/cube.urdf.xacro at line 1009. Replace: plugin name="cubeplugin" filename="/home/yourcomputername/dev_ws/install/smcnmpccube/lib/smcnmpccube/libcubeplugin.so" with the correct path by changing the username to the name of your computer. Then rebuild the project again to run the simulation.
+* Note that this project uses a custom plugin. Users need to replace the plugin path in the file /urdf/cube.urdf.xacro at line 1132. Replace: plugin name="cubeplugin" filename="/home/yourcomputername/dev_ws/install/smcnmpccube/lib/smcnmpccube/libcubeplugin.so" with the correct path by changing the username to the name of your computer. Then rebuild the project again to run the simulation.
 
 ## Simulation results
 
@@ -40,14 +40,21 @@ To run the simulation for Cube-Drone, follow these commands:
 
 ```shell
 # Step 1: Run the Gazebo model:
-$ ros2 launch smcnmpccube model.launch.py
+$ ros2 launch nmpcsmccube wall.launch.py
 
-# Step 2: Run the controller
-$ ros2 run smcnmpccube smcnmpccube
-```
+# Step 2: Run the trajectory
+$ ros2 run nmpcsmccube lidartrajectoryceiling
+or
+$ ros2 run nmpcsmccube lidartrajectorywall
+
+# Step 3: Run the controller
+$ ros2 run nmpcsmccube nmpcsmccube
+
+```shell
+
 ## Motor failure results
 
-To run the motor failure scenario, the user needs to modify the plugin in the /src/cubeplugin.cc. Change the added throttle to 50% as described in the manuscript. For the Cube, comment out line 177 and uncomment line 179.
+To run the motor failure scenario, the user needs to modify the plugin in the /src/cubeplugin.cc. Change the added throttle to 50% as described in the manuscript. For the Cube, comment out line 176 and uncomment line 179.
 
 Then rebuild the project and run the simulation as in the normal cases described above.
 
