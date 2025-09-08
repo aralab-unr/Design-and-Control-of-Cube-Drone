@@ -132,24 +132,3 @@ $ ros2 launch lio_imm liom.launch.py \pointcloud_topic:=<\cloud topic> \imu_topi
 <p align="center">
   <img src="figures/slamcompare.png" alt="slamcompare" width="900">
 </p>
-
-### Inpsection
-To validate this capability, we conducted experiments in three different locations:  
--Indoor inspection  
--Outdoor inspection  
--Closed-loop inspection on the campus bridge  
-The data from the indoor inspection is as follows:
-<p align="center">
-  <img src="figures/indoorinspectioncube.png" alt="indoorinspectioncube" width="800">
-</p>
-<p align="center">
-  <img src="figures/dataindoorinspection.png" alt="dataindoorinspectioncube" width="400">
-</p>
-The figure of outdoor inspection:
-<p align="center">
-  <img src="figures/outdoorinspectioncube.png" alt="outdoorinspectioncube" width="800">
-</p>
-The figure of bridge inspection:
-<p align="center">
-  <img src="figures/bridgeinspectioncube.png" alt="bridgeinspectioncube" width="800">
-</p>
