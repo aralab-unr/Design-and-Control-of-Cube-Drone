@@ -137,3 +137,8 @@ The 3D mapping of the parking lot:
 <p align="center">
   <img src="figures/parking.png" alt="parking" width="900">
 </p>
+
+
+
+https://github.com/user-attachments/assets/daff82e5-bff6-465b-8985-e104d291284d
+
